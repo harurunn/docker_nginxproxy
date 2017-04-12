@@ -1,0 +1,14 @@
+version: '2'
+services:
+    proxy:
+        build: .
+        container_name: proxy
+        ports:
+            - '80:80'
+        #volumes:
+        #    - ./volumes/conf.d:/etc/nginx/conf.d
+        networks:
+            - common_link
+networks:
+    common_link:
+        external: true

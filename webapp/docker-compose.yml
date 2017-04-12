@@ -1,0 +1,13 @@
+version: '2'
+services:
+    webapp:
+        image: nginx:latest
+        container_name: webapp
+        volumes:
+            - ./web:/usr/share/nginx/html
+        networks:
+            - common_link
+
+networks:
+    common_link:
+        external: true
